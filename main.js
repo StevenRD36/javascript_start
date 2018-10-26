@@ -1,28 +1,28 @@
+var users = [user1,user2,user3,user4,user5];
 
 window.onload = function () {
-    var users = [user1,user2,user3,user4,user5];
     //gebruik verschillende functions om deze opdrachten te laten slagen
 
     //1.loop door de lijst en print de naam af in console
-    print(users);
+    print();
     //2.bereken het gemiddelde van "programmeren 2"
-    console.log(calculateAver(users));
+    console.log(calculateAver());
     //3.sorteer de lijst op volgorde van het cijfer voor programmeren 1
     //tip users.sort()
-    console.log(sortProgrammeren1(users));
+    console.log(sortProgrammeren1());
     //4.print de lijst uit op de webpagina
     //gebruik een <table>
-    createTable(users);
+    createTable();
 }
 
-function print(users){
+function print(){
     //do something
     for(var i = 0 ; i < users.length ; i++){
         console.log(users[i].getFullName());
     }
 }
 
-function calculateAver(users){
+function calculateAver(){
     var sum = 0;
     //loop 
     for(var i = 0; i<users.length;i++){
@@ -31,14 +31,14 @@ function calculateAver(users){
     return sum / users.length; 
 }
 
-function sortProgrammeren1(users){
+function sortProgrammeren1(){
     users.sort(function(a,b){
         return a.punten[0].cijfer - b.punten[0].cijfer;
     });
     return users;
 }
 
-function createTable(users){
+function createTable(){
     var table = "<table>";
     for(var i = 0;i < users.length ; i++){
         table += "<tr><td>"+users[i].getFullName()+"</td><td>"+users[i].punten[0].vak+"</td><td>"+users[i].punten[0].cijfer+"</td><td>"+users[i].punten[1].vak+"</td><td>"+users[i].punten[1].cijfer+"</td></tr>";
